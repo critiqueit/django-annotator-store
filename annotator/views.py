@@ -43,7 +43,7 @@ class BaseStorageView(View):
 				return HttpResponse(status=204)
 				
 			ret = json.dumps(ret)
-			resp = HttpResponse(ret, mimetype="application/json")
+			resp = HttpResponse(ret)
 			resp["Content-Length"] = len(ret)
 			return resp
 		except ValueError as e:
